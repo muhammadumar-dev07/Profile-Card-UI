@@ -6,8 +6,10 @@ A clean and responsive profile card built using HTML, CSS, and JavaScript. I bui
 
 ## 📸 Preview
 
-> *(Add a screenshot here)*
-
+![Profile UI Dark ](assests/DarkMode%20UI.png)
+![Profile UI Light ](assests/LaptopLight%20UI.png)
+![Profile UI Phone ](assests/Phone%20UI.png)
+![Profile UI Tablet ](assests/Tablet%20UI.png)
 ---
 
 ## 🚀 Features
