@@ -39,6 +39,7 @@ A clean and responsive profile card built using HTML, CSS, and JavaScript. I bui
 
 ```
 profile-card/
+├──assests
 ├── index.html
 ├── style.css
 ├── script.js
@@ -68,8 +69,8 @@ profile-card/
 
 ## 🔮 Future Improvements
 
-- Add real profile photo
-- Connect social links to real profiles
+- Added real profile photo successfully.
+- Connect social links to real profiles, remaining Twitter and Instagram.
 - Add a portfolio section below the card
 - Add page load animation
 
