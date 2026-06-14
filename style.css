@@ -1,0 +1,508 @@
+/* ===========================
+   ROOT VARIABLES — LIGHT MODE
+=========================== */
+:root {
+  --bg:              #f0f2f5;
+  --card-bg:         #ffffff;
+  --card-top:        #1a2a3a;
+  --text-name:       #111111;
+  --text-title:      #555555;
+  --text-bio:        #666666;
+  --text-location:   #888888;
+  --stat-number:     #111111;
+  --stat-label:      #888888;
+  --divider:         #e0e0e0;
+  --skill-bg:        #f0f4ff;
+  --skill-color:     #3b5bdb;
+  --skill-border:    #c5d0f8;
+  --btn-follow-bg:   #1a2a3a;
+  --btn-follow-text: #ffffff;
+  --btn-msg-bg:      #ffffff;
+  --btn-msg-text:    #1a2a3a;
+  --btn-msg-border:  #1a2a3a;
+  --online:          #22c55e;
+  --shadow-card:     0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-hover:    0 28px 72px rgba(0, 0, 0, 0.18);
+  --social-bg:       #f4f6fb;
+  --social-hover-bg: #1a2a3a;
+  --social-color:    #555555;
+  --toggle-bg:       #1a2a3a;
+  --toggle-color:    #ffffff;
+  --radius-card:     20px;
+  --radius-btn:      50px;
+  --transition:      0.5s ease;
+}
+
+/* ===========================
+   DARK MODE VARIABLES
+=========================== */
+body.dark {
+  --bg:              #0f1318;
+  --card-bg:         #1c2333;
+  --card-top:        #0d1520;
+  --text-name:       #f1f5f9;
+  --text-title:      #94a3b8;
+  --text-bio:        #8892a4;
+  --text-location:   #64748b;
+  --stat-number:     #f1f5f9;
+  --stat-label:      #64748b;
+  --divider:         #2d3748;
+  --skill-bg:        #1e2d45;
+  --skill-color:     #7ca7f8;
+  --skill-border:    #2d4a7a;
+  --btn-follow-bg:   #3b82f6;
+  --btn-follow-text: #ffffff;
+  --btn-msg-bg:      transparent;
+  --btn-msg-text:    #94a3b8;
+  --btn-msg-border:  #2d3748;
+  --social-bg:       #151f2e;
+  --social-hover-bg: #3b82f6;
+  --social-color:    #64748b;
+  --toggle-bg:       #f1f5f9;
+  --toggle-color:    #1a2a3a;
+  --shadow-card:     0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-hover:    0 28px 72px rgba(0, 0, 0, 0.6);
+}
+
+/* ===========================
+   RESET & BASE
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* ===========================
+   DARK MODE TOGGLE
+=========================== */
+.dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: background var(--transition),
+              color var(--transition),
+              transform var(--transition);
+}
+.dark-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+/* ===========================
+   PAGE WRAPPER
+=========================== */
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow var(--transition), transform var(--transition),
+              background var(--transition);
+}
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* ===========================
+   CARD TOP BANNER
+=========================== */
+.card-top {
+  background: var(--card-top);
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative dots pattern on card top */
+.card-top::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 153, 0, 0.08);
+  top: -60px;
+  right: -40px;
+}
+.card-top::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  bottom: -40px;
+  left: 20px;
+}
+
+/* ===========================
+   AVATAR
+=========================== */
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: -55px;
+  z-index: 2;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid var(--card-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.avatar:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Profile picture */
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Online green dot */
+.online-badge {
+  width: 20px;
+  height: 20px;
+  background: var(--online);
+  border: 3px solid var(--card-bg);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 6px;
+  right: calc(50% - 47px);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+}
+
+/* ===========================
+   CARD BODY
+=========================== */
+.card-body {
+  padding: 16px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Name */
+.profile-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-name);
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+  transition: color var(--transition);
+}
+
+/* Title */
+.profile-title {
+  font-size: 13px;
+  color: var(--text-title);
+  font-weight: 500;
+  margin-bottom: 8px;
+  transition: color var(--transition);
+}
+
+/* Location */
+.profile-location {
+  font-size: 12px;
+  color: var(--text-location);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color var(--transition);
+}
+.profile-location i { font-size: 11px; color: #ff4d4f; }
+
+/* Bio */
+.profile-bio {
+  font-size: 13px;
+  color: var(--text-bio);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  max-width: 320px;
+  transition: color var(--transition);
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.skill-tag {
+  background: var(--skill-bg);
+  color: var(--skill-color);
+  border: 1px solid var(--skill-border);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+  transition: background var(--transition),
+              color var(--transition),
+              transform var(--transition);
+  cursor: default;
+}
+.skill-tag:hover {
+  transform: translateY(-2px);
+  background: var(--skill-color);
+  color: #ffffff;
+}
+
+/* ===========================
+   STATS
+=========================== */
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  background: var(--social-bg);
+  border-radius: 14px;
+  padding: 16px 10px;
+  margin-bottom: 22px;
+  transition: background var(--transition);
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--stat-number);
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--stat-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color var(--transition);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--divider);
+  transition: background var(--transition);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.card-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+/* Follow button */
+.btn-follow {
+  flex: 1;
+  background: var(--btn-follow-bg);
+  color: var(--btn-follow-text);
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background var(--transition),
+              transform var(--transition),
+              box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(26, 42, 58, 0.25);
+}
+.btn-follow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 42, 58, 0.35);
+}
+.btn-follow:active { transform: scale(0.97); }
+
+/* Following state */
+.btn-follow.following {
+  background: #22c55e;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+}
+
+/* Message button */
+.btn-message {
+  flex: 1;
+  background: var(--btn-msg-bg);
+  color: var(--btn-msg-text);
+  border: 2px solid var(--btn-msg-border);
+  border-radius: var(--radius-btn);
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background var(--transition),
+              color var(--transition),
+              transform var(--transition);
+}
+.btn-message:hover {
+  background: var(--btn-follow-bg);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+.btn-message:active { transform: scale(0.97); }
+
+/* ===========================
+   SOCIAL ICONS
+=========================== */
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--social-bg);
+  color: var(--social-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background var(--transition),
+              color var(--transition),
+              transform var(--transition),
+              box-shadow var(--transition);
+  text-decoration: none;
+}
+.social-icon:hover {
+  background: var(--social-hover-bg);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual brand colors on hover */
+.social-icon.github:hover   { background: #24292e; }
+.social-icon.linkedin:hover { background: #0077b5; }
+.social-icon.twitter:hover  { background: #000000; }
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* ===========================
+   RESPONSIVE — TABLET (≤600px)
+=========================== */
+@media (max-width: 600px) {
+  body { padding: 30px 16px; align-items: flex-start; }
+
+  .card { max-width: 100%; border-radius: 16px; }
+
+  .card-top { height: 80px; }
+
+  .avatar-wrapper { margin-top: -45px; }
+  .avatar { width: 90px; height: 90px; }
+  .avatar-icon { font-size: 42px; }
+  .online-badge { right: calc(50% - 50px); }
+
+  .card-body { padding: 14px 20px 24px; }
+
+  .profile-name { font-size: 20px; }
+  .stat-number  { font-size: 18px; }
+
+  .card-buttons { flex-direction: column; gap: 10px; }
+  .btn-follow, .btn-message { width: 100%; }
+}
+
+/* ===========================
+   RESPONSIVE — SMALL (≤380px)
+=========================== */
+@media (max-width: 380px) {
+  .card-body { padding: 12px 16px 20px; }
+  .profile-name { font-size: 18px; }
+  .profile-bio  { font-size: 12px; }
+  .stats { padding: 12px 6px; }
+  .stat-number { font-size: 16px; }
+  .social-icon { width: 38px; height: 38px; font-size: 14px; }
+}
+
+/* ===========================
+   LARGE SCREENS (≥900px)
+=========================== */
+@media (min-width: 900px) {
+  .card { max-width: 420px; }
+  .profile-name { font-size: 24px; }
+}

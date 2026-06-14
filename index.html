@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Dark Mode Toggle -->
+  <button class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">
+    <i class="fa-solid fa-moon" id="darkIcon"></i>
+  </button>
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- ===== PROFILE CARD ===== -->
+    <div class="card">
+
+      <!-- Card Top Background -->
+      <div class="card-top"></div>
+
+      <!-- Avatar -->
+      <div class="avatar-wrapper">
+ 
+        <div class="avatar">
+          <img src="profileImage.png" alt="Muhammad Umar" class="avatar-img" /> 
+        </div>
+        <span class="online-badge" title="Online"></span>
+      </div>
+
+      <!-- Profile Info -->
+      <div class="card-body">
+
+        <h1 class="profile-name">Muhammad Umar</h1>
+        <p class="profile-title">Frontend Developer & CS Student</p>
+        <p class="profile-location">
+          <i class="fa-solid fa-location-dot"></i> D.I. Khan, Pakistan
+        </p>
+
+        <p class="profile-bio">
+          BS Computer Science student at Gomal University, passionate about
+          building clean UIs and exploring web technologies.
+        </p>
+
+        <!-- Skills -->
+        <div class="skills">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">MS DBMS</span>
+          <span class="skill-tag">Cyber Security</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="12">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="180">0</span>
+            <span class="stat-label">Followers</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="340">0</span>
+            <span class="stat-label">Likes</span>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="card-buttons">
+          <button class="btn-follow" id="followBtn">
+            <i class="fa-solid fa-user-plus" id="followIcon"></i>
+            <span id="followText">Follow</span>
+          </button>
+          <a href = "mailto:muhammadumargomal123@gmail.com" class="btn-message" style="text-decoration: none ;">
+            <i class="fa-solid fa-envelope"></i>
+            Message
+          </a>
+        </div>
+
+        <!-- Social Links -->
+         
+        <div class="social-links">
+
+          <a href="https://github.com/muhammadumar-dev07" class="social-icon github" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/muhammad-umar-647859338/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3ByBpoXEfiQhWekrl6lycytQ%3D%3D" class="social-icon linkedin" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="#" class="social-icon twitter" target="_blank" title="Twitter / X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+          <a href="#" class="social-icon instagram" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+        </div>
+
+      </div>
+      <!-- end card-body -->
+
+    </div>
+    <!-- end card -->
+
+  </div>
+  <!-- end page-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
